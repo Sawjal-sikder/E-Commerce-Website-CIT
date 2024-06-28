@@ -23,9 +23,10 @@
                                     <div class="heading_s1">
                                         <h3 class="mb-30">Login</h3>
                                     </div>
-                                    <form method="post">
+                                    <form method="POST">
+                                    {% csrf_token %}
                                         <div class="form-group">
-                                            <input type="text" required="" name="email" placeholder="Your Email">
+                                            <input type="text" required="" name="username" placeholder="Your username">
                                         </div>
                                         <div class="form-group">
                                             <input required="" type="password" name="password" placeholder="Password">
@@ -57,7 +58,7 @@
                                         Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy
                                     </p>
                                     <form method="POST">
-                                        {%csrf_token%}
+                                        {% csrf_token %}
                                         <div class="form-group">
                                             <input type="text" required="" name="username" placeholder="Username">
                                         </div>
