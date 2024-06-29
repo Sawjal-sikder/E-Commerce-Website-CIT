@@ -29,6 +29,7 @@ def dashboard(request):
                     user.email = email
                     user.set_password(npassword)
                     user.save()
+                    print(user)
                     update_session_auth_hash(request, user)  # Important to keep the user logged in
                     messages.success(request, 'Profile updated successfully.')
                     return redirect('dashboard')

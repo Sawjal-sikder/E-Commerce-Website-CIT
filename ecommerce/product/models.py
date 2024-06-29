@@ -35,6 +35,11 @@ class Product(models.Model):
     image2 = models.ImageField(upload_to='product_images/', blank=True, null=True)
     image3 = models.ImageField(upload_to='product_images/', blank=True, null=True)
     banner = models.ImageField(upload_to='product_banners/', blank=True, null=True)
+    is_Featured = models.BooleanField(default=False)
+    is_Popular = models.BooleanField(default=False)
+    is_New_added = models.BooleanField(default=False)
+    # created_at = models.DateTimeField(auto_now_add=True)
+
 
     def __str__(self):
         return self.name
