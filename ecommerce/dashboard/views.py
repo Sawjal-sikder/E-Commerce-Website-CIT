@@ -4,9 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from .models import Address
-from django.contrib.auth.forms import PasswordChangeForm
 
-@login_required(login_url='user_login')
+@login_required(login_url='login')
 def dashboard(request):
     user = request.user
     user_address = Address.objects.get(user=user)
@@ -27,9 +26,9 @@ def dashboard(request):
                     user.first_name = first_name
                     user.last_name = last_name
                     user.email = email
-                    user.set_password(npassword)
+                    if npassword:
+                        user.set_password(npassword)
                     user.save()
-                    print(user)
                     update_session_auth_hash(request, user)  # Important to keep the user logged in
                     messages.success(request, 'Profile updated successfully.')
                     return redirect('dashboard')

@@ -7,6 +7,10 @@ from django.core.mail import send_mail
 from django.contrib.auth import authenticate,logout as user_Logout,login
 
 # Create your views here.
+
+
+
+
 def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
