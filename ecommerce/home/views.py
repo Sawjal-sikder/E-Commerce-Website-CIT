@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from product.models import Category, SubCategory, Product
+from product.models import Category, SubCategory, Product, Brand
 from .models import Slider
 
 # Create your views here.
@@ -13,6 +13,7 @@ def home(request):
     is_Popular = Product.objects.filter(is_Popular=True)
     is_New_added = Product.objects.filter(is_New_added=True)
     New_Arrivals = Product.objects.all().order_by('-name')
+    brands = Brand.objects.all()
     return render(request, 'home.html', 
     {
         'category_subcategory_map': category_subcategory_map,
@@ -21,5 +22,6 @@ def home(request):
         'is_Popular':is_Popular,
         'is_New_added':is_New_added,
         'popular_catagory' : SubCategory.objects.all(),
-        'New_Arrivals':New_Arrivals
+        'New_Arrivals':New_Arrivals,
+        'brands':brands
     })
