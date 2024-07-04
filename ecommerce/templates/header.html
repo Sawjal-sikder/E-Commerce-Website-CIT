@@ -179,7 +179,7 @@
                                 </li>
                                 <li><a href="shop-grid-right.html">Shop <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="shop-grid-right.html">Shop Grid – Right Sidebar</a></li>
+                                        <li><a href="{% url 'product' %}">Shop Grid – Right Sidebar</a></li>
                                         <li><a href="shop-grid-left.html">Shop Grid – Left Sidebar</a></li>
                                         <li><a href="shop-list-right.html">Shop List – Right Sidebar</a></li>
                                         <li><a href="shop-list-left.html">Shop List – Left Sidebar</a></li>
@@ -372,8 +372,8 @@
         </div>
         <div class="mobile-header-content-area">
             <div class="mobile-search search-style-3 mobile-header-border">
-                <form action="#">
-                    <input type="text" placeholder="Search for items…">
+                <form action="{% url 'search' %}" method="GET">
+                    <input type="text" placeholder="Search for items…" name="search">
                     <button type="submit"><i class="fi-rs-search"></i></button>
                 </form>
             </div>
