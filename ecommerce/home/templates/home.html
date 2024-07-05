@@ -98,7 +98,7 @@
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
+                                        <a href="{% url 'single_product' prod.slug %}">
                                             <img class="default-img"style="width: 300px; height: 200px;" src="{{prod.image1.url}}" alt="">
                                             <img class="hover-img"style="width: 300px; height: 200px;" src="{{prod.image1.url}}" alt="">
                                         </a>
@@ -116,7 +116,7 @@
                                     <div class="product-category">
                                         <a href="shop-grid-right.html">{{ prod.name | title }}</a>
                                     </div>
-                                    <h2><a href="shop-product-right.html">{{ prod.name | truncatechars:20 }}</a></h2>
+                                    <h2><a href="{% url 'single_product' prod.slug %}">{{ prod.name | truncatechars:20 }}</a></h2>
                                     <div class="rating-result" title="90%">
                                         <span>
                                             <span>90%</span>
@@ -144,7 +144,7 @@
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
+                                        <a href="{% url 'single_product' prod.slug %}">
                                             <img class="default-img" style="width: 300px; height: 200px;" src="{{prod.image1.url}}" alt="">
                                             <img class="hover-img"style="width: 300px; height: 200px;" src="{{prod.image1.url}}" alt="">
                                         </a>
@@ -162,7 +162,7 @@
                                     <div class="product-category">
                                         <a href="shop-grid-right.html">{{ prod.name | title }} </a>
                                     </div>
-                                    <h2><a href="shop-product-right.html">{{ prod.name | truncatechars:20 }}</a></h2>
+                                    <h2><a href="{% url 'single_product' prod.slug %}">{{ prod.name | truncatechars:20 }}</a></h2>
                                     <div class="rating-result" title="90%">
                                         <span>
                                             <span>90%</span>
@@ -190,7 +190,7 @@
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
+                                        <a href="{% url 'single_product' prod.slug %}">
                                             <img class="default-img"style="width: 300px; height: 200px;" src="{{prod.image1.url}}" alt="">
                                             <img class="hover-img" style="width: 300px; height: 200px;"src="{{prod.image1.url}}" alt="">
                                         </a>
@@ -208,7 +208,7 @@
                                     <div class="product-category">
                                         <a href="shop-grid-right.html">{{ prod.name | title }}</a>
                                     </div>
-                                    <h2><a href="shop-product-right.html">{{ prod.name | truncatechars:20 }}</a></h2>
+                                    <h2><a href="{% url 'single_product' prod.slug %}">{{ prod.name | truncatechars:20 }}</a></h2>
                                     <div class="rating-result" title="90%">
                                         <span>
                                             <span>90%</span>
@@ -255,9 +255,9 @@
         {%for sub_cat in popular_catagory%}
                     <div class="card-1">
                         <figure class=" img-hover-scale overflow-hidden">
-                            <a href="shop-grid-right.html"><img  src="{{sub_cat.thumbnail.url}}" alt=""></a>
+                            <a href="{% url 'categories'% sub_cat.slug}"><img  src="{{sub_cat.thumbnail.url}}" alt=""></a>
                         </figure>
-                        <h5><a href="shop-grid-right.html">{{sub_cat.name | title}}</a></h5>
+                        <h5><a href="{% url 'categories'% sub_cat.slug}">{{sub_cat.name | title}}</a></h5>
                     </div>
             {%endfor%}
                 </div>
@@ -310,7 +310,7 @@
                     <div class="product-cart-wrap small hover-up">
                         <div class="product-img-action-wrap">
                             <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html">
+                                <a href="{% url 'single_product' new.slug %}">
                                     <img class="default-img" src="{{new.image1.url}}" alt="">
                                     <img class="hover-img" src="{{new.image1.url}}" alt="">
                                 </a>
@@ -326,7 +326,7 @@
                             </div>
                         </div>
                         <div class="product-content-wrap">
-                            <h2><a href="shop-product-right.html">{{new.name | truncatechars:20}}</a></h2>
+                            <h2><a href="{% url 'single_product' new.slug %}">{{new.name | truncatechars:20}}</a></h2>
                             <div class="rating-result" title="90%">
                                 <span>
                                 </span>
@@ -438,7 +438,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="{% url 'single_product' prod.slug %}">
                                                     <img class="default-img" src="{{prod.image1.url}}" alt="">
                                                     <img class="hover-img" src="{{prod.image1.url}}" alt="">
                                                 </a>
@@ -457,7 +457,7 @@
                                             <div class="product-category">
                                                 <a href="shop-grid-right.html">{{prod.sub_category}}</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">{{prod.name | truncatechars:20}}}</a></h2>
+                                            <h2><a href="{% url 'single_product' prod.slug %}">{{prod.name | truncatechars:20}}}</a></h2>
                                             <div class="rating-result" title="90%">
                                                 <span>
                                                     <span>70%</span>
@@ -485,7 +485,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="{% url 'single_product' prod.slug %}">
                                                     <img class="default-img" src="{{prod.image1.url}}" alt="">
                                                     <img class="hover-img" src="{{prod.image1.url}}" alt="">
                                                 </a>
@@ -504,7 +504,7 @@
                                             <div class="product-category">
                                                 <a href="shop-grid-right.html">{{prod.sub_category | title}}</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">{{prod.name | truncatechars:20}}</a></h2>
+                                            <h2><a href="{% url 'single_product' prod.slug %}">{{prod.name | truncatechars:20}}</a></h2>
                                             <div class="rating-result" title="90%">
                                                 <span>
                                                     <span>70%</span>
@@ -531,7 +531,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="{% url 'single_product' prod.slug %}">
                                                     <img class="default-img" src="{{prod.image1.url}}" alt="">
                                                     <img class="hover-img" src="{{prod.image1.url}}" alt="">
                                                 </a>
@@ -550,7 +550,7 @@
                                             <div class="product-category">
                                                 <a href="shop-grid-right.html">{{prod.sub_category | title}}</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">{{prod.name | truncatechars:20}}</a></h2>
+                                            <h2><a href="{% url 'single_product' prod.slug %}">{{prod.name | truncatechars:20}}</a></h2>
                                             <div class="rating-result" title="90%">
                                                 <span>
                                                     <span>70%</span>
