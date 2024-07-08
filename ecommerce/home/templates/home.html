@@ -255,9 +255,9 @@
         {%for sub_cat in popular_catagory%}
                     <div class="card-1">
                         <figure class=" img-hover-scale overflow-hidden">
-                            <a href="{% url 'categories'% sub_cat.slug}"><img  src="{{sub_cat.thumbnail.url}}" alt=""></a>
+                            <a href="{% url 'categories' sub_cat.slug %}"><img  src="{{sub_cat.thumbnail.url}}" alt=""></a>
                         </figure>
-                        <h5><a href="{% url 'categories'% sub_cat.slug}">{{sub_cat.name | title}}</a></h5>
+                        <h5><a href="{% url 'categories' sub_cat.slug %}">{{sub_cat.name | title}}</a></h5>
                     </div>
             {%endfor%}
                 </div>
