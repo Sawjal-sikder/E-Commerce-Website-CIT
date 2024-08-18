@@ -4,6 +4,8 @@ from .models import slider,condation,offer
 from products.models import Product, SubCategory, Brand
 
 # Create your views here.
+def contact_us(request):
+    return render(request, 'contact.html',{})
 @login_required(login_url='user_registration')
 
 def home(request):

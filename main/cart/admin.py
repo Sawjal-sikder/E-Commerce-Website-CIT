@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Cart, Order, Coupon
+from .models import Cart, Order, Coupon, wishlsit
 # Register your models here.
 class CartAdmin(admin.ModelAdmin):
     list_display = ['user', 'product', 'qty',]
@@ -11,4 +11,8 @@ admin.site.register(Order,OrderAdmin)
 class CouponAdmin(admin.ModelAdmin):
     list_display = ['code', ]
 admin.site.register(Coupon,CouponAdmin)
+
+class wishlsitAdmin(admin.ModelAdmin):
+    list_display = ['user','product', ]
+admin.site.register(wishlsit,wishlsitAdmin)
 

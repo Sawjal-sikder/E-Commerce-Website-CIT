@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Cart, Order, Coupon
+from .models import Cart, Order, Coupon, wishlsit
 from sslcommerz_lib import SSLCOMMERZ
 from home.context_processors import context_categories
 from products.models import Product
@@ -9,6 +9,23 @@ from django.views.decorators.csrf import csrf_exempt
 import logging
 
 # Create your views here.
+
+def wish_list(request):
+    return render(request,'wishlist.html', {})
+
+def add_wish(request, id):
+    user = request.user
+    product = Product.objects.get(id=id)
+    # Create a wishlist item or get it if it already exists
+    wishlsit.objects.get_or_create(user=user, product=product)
+    return redirect(request.META.get('HTTP_REFERER', '/'))
+
+def wish_remove(request,id):
+    wishremove = wishlsit.objects.get(id=id)
+    wishremove.delete()
+    return render(request,'wishlist.html', {})
+
+
 def cart(request):
     user = request.user
     cart_items = Cart.objects.filter(user=user)
